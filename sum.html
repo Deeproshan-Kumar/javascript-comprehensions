@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum (0 to Num)</title>
+</head>
+<body>
+    <input type="text" id="num">
+    <button onclick="printSum();">Print Sum</button>
+    <br><br>
+    <p id="res"></p>
+    <script>
+        function printSum(){
+        let num=document.querySelector('#num').value;
+        let btn=document.querySelector('button');
+        let res=document.querySelector('#res');
+        sum=0;
+        for(let i=1; i<=num; i++){
+            sum=sum+i;
+        }
+        res.innerText=`Sum is : ${sum}`;
+        }
+    </script>
+</body>
+</html>

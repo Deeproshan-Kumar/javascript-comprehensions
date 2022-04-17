@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Code</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        div{
+            height: 200px;
+            width: 200px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div>Welcome to Techpile</div>
+    <script>
+        var changeBg=()=>{
+        const colorCode="0123456789abcdef";
+        var color="#";
+        for(let i=0;i<6;i++){
+            var randomIndex=Math.floor(Math.random()*colorCode.length);
+            color+=colorCode.charAt(randomIndex);
+        }
+            document.querySelector("div").style.background=color;    
+        }
+        window.setInterval(changeBg,1000);
+    </script>
+</body>
+</html>

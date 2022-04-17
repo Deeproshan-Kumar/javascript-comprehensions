@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program 4</title>
+</head>
+<body>
+    <button>Print Array Items in Ordered List</button>
+    <script>
+        const arr=["HTML", "CSS", "JS", "JQUERY", "BOOTSTRAP"];
+        let btn=document.querySelector('button').addEventListener('click', function(){
+            var list="<ol>";
+            for(let i=0; i<arr.length;i++){
+                list+="<li>"+arr[i]+"</li>";
+            }
+            list+="</ol>";
+            document.write(list);
+        });
+    </script>
+</body>
+</html>

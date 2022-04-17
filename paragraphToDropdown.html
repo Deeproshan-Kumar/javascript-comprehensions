@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph to Dropdown</title>
+    <style>
+        button{
+            background: blueviolet;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <p class="text">Hello I'm Anonymous1</p>
+    <p class="text">Hello I'm Anonymous2</p>
+    <p class="text">Hello I'm Anonymous3</p>
+    <p class="text">Hello I'm Anonymous4</p>
+    <p class="text">Hello I'm Anonymous5</p>
+    <button onclick="printTxt();">PRINT TEXT</button>
+    <p id="msg"></p>
+    <script>
+        const printTxt=()=>{
+        var msg=document.getElementById("msg");
+        var texts=document.querySelectorAll('.text');
+        var res="<select>";
+        for(var i=0;i<texts.length; i++){
+            res=res+"<option>"+texts[i].innerHTML+"</option>";
+        }
+        res+="</select>";
+        msg.innerHTML=res;
+        }
+
+        
+    </script>
+</body>
+</html>

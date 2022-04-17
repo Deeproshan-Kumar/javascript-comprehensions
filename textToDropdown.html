@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Dropdown</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input{
+            padding: 8px 0;
+            outline-color: blueviolet;
+        }
+
+        button{
+            background: blueviolet;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="sentence">
+    <br><br>
+    <button onclick="demo();">PRINT</button>
+    <p id="msg"></p>
+    <script>
+        const demo=()=>{
+        var msg=document.getElementById("msg");
+        let sent=document.querySelector('#sentence').value;
+        let words=sent.split(" ");
+        var res="<select>";
+        for(var i=0;i<words.length; i++){
+            res=res+"<option>"+words[i]+"</option>";
+        }
+        res+="</select>";
+        msg.innerHTML=res;
+    }
+    </script>
+</body>
+</html>

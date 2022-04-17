@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Object</title>
+    <style>
+        *{
+            font-family: sans-serif !important;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button{
+            background: blueviolet;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <button>CLICK ME</button>
+    <script>
+        const obj={
+            name: "Deeproshan Kumar",
+            branch: "IT",
+            msg : function(){
+                alert("Good Luck...!");
+            },
+            msg2: function(){
+                alert("Keep Learniing");
+            }
+        };
+        let btn=document.querySelector('button');
+        btn.addEventListener('click', function(){
+            document.write(obj.name+"<br>");
+            document.write(obj.branch+"<br>");
+            obj.msg();
+            obj.msg2();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Content to Dropdown</title>
+</head>
+<body>
+    <textarea name="" id="sentence" cols="30" rows="10" onchange="demo();"></textarea>
+    <p id="msg"></p>
+    <script>
+        const demo=()=>{
+        var msg=document.getElementById("msg");
+        let sent=document.querySelector('#sentence').value;
+        let words=sent.split(" ");
+        var res="<select>";
+        for(var i=0;i<words.length; i++){
+            res=res+"<option>"+words[i]+"</option>";
+        }
+        res+="</select>";
+        msg.innerHTML=res.toUpperCase();   
+    }
+</script>
+</body>
+</html>

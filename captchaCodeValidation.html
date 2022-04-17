@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Webpage With Captcha Validation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input{
+            outline-color: blueviolet;
+            width: 300px;
+            padding: 10px;
+        }
+
+        button{
+            background: blueviolet;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            outline: none;
+        }
+    </style>
+</head>
+<body onload="captchaGen();">
+    <input type="text" id="field" placeholder="Enter the Captcha Code">
+    <p id="captchaText"></p>
+    <button onclick="validate();">OPEN</button>
+    <br>
+
+    <script>
+        var field=document.querySelector('#field');
+         var captchaGen=()=>{
+        const captchaCode="0123456789abcdefghijklmnopqrstuvwxyz";
+        captcha="";
+        var captchatext=document.querySelector("#captchaText");   
+        for(let i=0;i<6;i++){
+            var randomIndex=Math.floor(Math.random()*captchaCode.length);
+            captcha+=captchaCode.charAt(randomIndex);
+        }
+        captchatext.innerText=captcha;  
+    }
+
+    const validate=()=>{
+        if(field.value==captcha){
+                window.open("https://www.techpilelko.in");
+        }else{
+            alert("Something Went Wrong...!");
+        }
+    }
+    window.setInterval(captchaGen,10000);
+    </script>
+</body>
+</html>

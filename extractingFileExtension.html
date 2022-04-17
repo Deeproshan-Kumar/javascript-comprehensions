@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracting File Extension</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" name="" id="file" onchange="validate();">
+    <span id="msg"></span>
+    <script>
+        const validate=()=>{
+            let file=document.querySelector('#file');
+            let msg=document.querySelector('#msg');
+            let filename=file.value;
+            let extension=filename.substring(filename.lastIndexOf('.'));
+            msg.innerHTML=`<br>File Extension Name : ${extension}`;
+        }
+    </script>
+</body>
+</html>
